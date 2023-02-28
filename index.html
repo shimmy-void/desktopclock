@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="./Noto_Serif_JP/NotoSerifJP-Regular.otf">
+    <link rel="stylesheet" href="./style.css">
+    <title>Clock and Headline</title>
+  </head>
+  <body>
+
+    <div id="nav" class="overlay">
+      <a href="#" id="btn-navclose">&times;</a>
+      <div class="overlay-content">
+        <h2>News API Config</h2>
+        <div class="overlay-news grid-container">
+          <div class="grid-item1">
+            <label class="radio-container">
+              <input type="radio" id="country" name="news-querytype" value="country"> Country & Category
+              <span class="checkmark"></span>
+            </label>
+            <h3>Country</h3>
+            <select id="news-country">
+              <option value="">Select country:</option>
+            </select>
+            <h3>Category</h3>
+            <select id="news-category">
+              <option value="">Select category:</option>
+            </select>
+          </div>
+          <div class="grid-item2">
+            <label class="radio-container">
+              <input type="radio" id="source" name="news-querytype" value="source"> Source
+              <span class="checkmark"></span>
+            </label>
+            <h3>Resorce</h3>
+            <select id="news-source">
+              <option value="">Select source:</option>
+            </select>
+          </div>
+        </div>
+        <div class="overlay-weather">
+          <h2>Open Weather Map API Config</h2>
+          <h3>Units</h3>
+          <label class="radio-container">
+            <input type="radio" id="standard" name="units" value="standard"> Standard
+            <span class="checkmark"></span>
+          </label>
+          <label class="radio-container">
+            <input type="radio" id="metric" name="units" value="metric"> Metric
+            <span class="checkmark"></span>
+          </label>
+          <label class="radio-container">
+            <input type="radio" id="imperial" name="units" value="imperial"> Imperial
+            <span class="checkmark"></span>
+          </label>
+          <h3>Language</h3>
+          <select id="weather-lang">
+            <option value="">Select language:</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div id="headline-container">
+      <div id="headline"></div>
+    </div>
+    <div id="btn-navopen">
+      &#9776;
+      <span class="tooltiptext">open config</span>
+    </div>
+    <div id="disp-time">
+      <span id="disp-hrmin"></span>
+      <span id="disp-sec"></span>
+    </div>
+    <div id="disp-dayweather">
+      <span id="disp-day"></span>
+      <div id="disp-currentweather">
+        <img id="current-icon">
+        <div id="current-temp"></div>
+      </div>
+    </div>
+    <div id="disp-forecast">
+      <table>
+        <tr>
+          <th class="forecast-header">Day</th>
+          <td class="forecast-day" id="forecast-day0"></td>
+          <td class="forecast-day" id="forecast-day1"></td>
+          <td class="forecast-day" id="forecast-day2"></td>
+          <td class="forecast-day" id="forecast-day3"></td>
+          <td class="forecast-day" id="forecast-day4"></td>
+          <td class="forecast-day" id="forecast-day5"></td>
+          <td class="forecast-day" id="forecast-day6"></td>
+          <td class="forecast-day" id="forecast-day7"></td>
+        </tr>
+        <tr>
+          <th class="forecast-header">Hour</th>
+          <td class="forecast-time" id="forecast-time0"></td>
+          <td class="forecast-time" id="forecast-time1"></td>
+          <td class="forecast-time" id="forecast-time2"></td>
+          <td class="forecast-time" id="forecast-time3"></td>
+          <td class="forecast-time" id="forecast-time4"></td>
+          <td class="forecast-time" id="forecast-time5"></td>
+          <td class="forecast-time" id="forecast-time6"></td>
+          <td class="forecast-time" id="forecast-time7"></td>
+        </tr>
+        <tr>
+          <th class="forecast-header">Weather</th>
+          <td><img class="forecast-icon" id="forecast-icon0"></td>
+          <td><img class="forecast-icon" id="forecast-icon1"></td>
+          <td><img class="forecast-icon" id="forecast-icon2"></td>
+          <td><img class="forecast-icon" id="forecast-icon3"></td>
+          <td><img class="forecast-icon" id="forecast-icon4"></td>
+          <td><img class="forecast-icon" id="forecast-icon5"></td>
+          <td><img class="forecast-icon" id="forecast-icon6"></td>
+          <td><img class="forecast-icon" id="forecast-icon7"></td>
+        </tr>
+        <tr>
+          <th class="forecast-header" id="forecast-temp">Temp []</th>
+          <td class="forecast-temp" id="forecast-temp0"></td>
+          <td class="forecast-temp" id="forecast-temp1"></td>
+          <td class="forecast-temp" id="forecast-temp2"></td>
+          <td class="forecast-temp" id="forecast-temp3"></td>
+          <td class="forecast-temp" id="forecast-temp4"></td>
+          <td class="forecast-temp" id="forecast-temp5"></td>
+          <td class="forecast-temp" id="forecast-temp6"></td>
+          <td class="forecast-temp" id="forecast-temp7"></td>
+        </tr>
+      </table>
+    </div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

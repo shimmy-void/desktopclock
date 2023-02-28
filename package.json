@@ -1,0 +1,23 @@
+{
+  "name": "desktopclock",
+  "version": "1.0.0",
+  "description": "diplay desktop clock with news headline and weather forecast",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shimmy-void/desktopclock.git"
+  },
+  "author": "shimmy-void",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shimmy-void/desktopclock/issues"
+  },
+  "homepage": "https://github.com/shimmy-void/desktopclock#readme",
+  "devDependencies": {
+    "electron": "^23.1.1"
+  }
+}
