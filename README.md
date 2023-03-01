@@ -2,11 +2,11 @@
 
 ![Top image of desktop clock](/docs/img/top.png)
 
-# What is this?
+## What is this?
 
 An desktop application to display a clock with news headlines and weather forecasts for small displays (e.g. resolution of 800 x 640). This app is developed using [Electron](https://www.electronjs.org/) framework and web APIs of [News API](https://newsapi.org/) and [OpenWeather](https://openweathermap.org/).
 
-# Features
+## Features
 
 - Displays current time as well as current weather and temperature on your location.
 - Displays news headline delivered from News API.
@@ -15,7 +15,7 @@ An desktop application to display a clock with news headlines and weather foreca
 - Units of temperatures can be changed to Kelvin (K), Fahrenheit (°F), or Celcius (°C).
 - Uses free plan API keys of Google, News API, and OpenWeather to acquire geolocation, news feed, and weather forecast data.
 
-# Prerequisites
+## Prerequisites
 
 - Install [Node.js](https://nodejs.org/en/) to use Electron framework.
 - Acquire API keys from the following web service provides:
@@ -23,7 +23,7 @@ An desktop application to display a clock with news headlines and weather foreca
     - [News API](https://newsapi.org/register)
     - [OpenWeather](https://home.openweathermap.org/users/sign_up) 
 
-# How to install
+## How to install
 
 1. Clone this repository on a directory.
 
@@ -48,7 +48,7 @@ An desktop application to display a clock with news headlines and weather foreca
 }
 ```
 
-# Usage
+## Usage
 
 To start the application, type the following command:
 
@@ -58,7 +58,7 @@ To start the application, type the following command:
 
 That is done!
 
-## Config setting
+### Config setting
 
 If you want to change settings like news fed country, category, or source, click the button attacked on the left of the display.
 
@@ -74,7 +74,7 @@ On this panel, you can change how the News API feeds and which temperature unit 
 
 The config settings are stored in `config.json`, you can also change the settings manually by editting the file.
 
-## Full screen mode
+### Full screen mode
 
 This application can hide top menu bar and the title by clicking `View->Full screen` button or using shortcut key: `Ctrl+F`.
 
@@ -82,38 +82,38 @@ This application can hide top menu bar and the title by clicking `View->Full scr
 
 ![full screen button](/docs/img/fullscreen.png)
 
-# Limitations
+## Limitations
 
 Due to the specification of web APIs with free plan, only restriced numbers of API requests are allowed.
 
-## Google (geolocation)
+### Google (geolocation)
 - 40,000 requests per month within Google's $200 no charge service, but Google is adopting pay-as-you-go pricing model, see [Google geolocation billing page](https://developers.google.com/maps/documentation/geolocation/usage-and-billing).
 
-## News API
+### News API
 - 100 requests per day
 - Articles with 24 hour delay
 
-## OpenWeather
+### OpenWeather
 - 60 requests per minute
 - 1,000,000 requests per month ( = 32,258 requests per day, 1,344 requests per hour, or 22 requests per minute )
 
 This application makes API requests as follows:
 
-## Google (geolocation)
+### Google (geolocation)
 - Only once during startup
 
-## News API
+### News API
 - 1 request per every 15 minutes
 - 1 request when closing the config menu
 
-## Openweather
+### Openweather
 - 1 request per every 15 minutes for the current weather
 - 1 request per hour for the forecast
 - 2 requests when closing the config menu
 
 If you want to make more requests past the above limitations, upgrade your each API's plan to higher ones or just stop the application and wait until the restrictions are alleviated.
 
-# Dependency
+## Dependency
 
 - Node.js v18.14.2
 - npm 9.5.1
