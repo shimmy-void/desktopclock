@@ -259,7 +259,7 @@ function dispTime() {
 const elemConfigNewsCountry = document.getElementById("news-country");
 const elemConfigNewsCategory = document.getElementById("news-category");
 const elemConfigNewsSorce = document.getElementById("news-source");
-const elemConfigWeatherLang = document.getElementById("weather-lang");
+// const elemConfigWeatherLang = document.getElementById("weather-lang");
 const elemConfigNewsQueryCountry = document.querySelector("input[name=news-querytype][id=country]");
 const elemConfigNewsQuerySource = document.querySelector("input[name=news-querytype][id=source]");
 
@@ -293,12 +293,12 @@ function drawConfig() {
     option.innerHTML = sourceList[i];
     elemConfigNewsSorce.appendChild(option);
   }
-  for (let i = 0; i < langListShort.length; i++) {
-    const option = document.createElement("option");
-    option.setAttribute("value", langListShort[i]);
-    option.innerHTML = langListLong[i];
-    elemConfigWeatherLang.appendChild(option);
-  }
+  // for (let i = 0; i < langListShort.length; i++) {
+  //   const option = document.createElement("option");
+  //   option.setAttribute("value", langListShort[i]);
+  //   option.innerHTML = langListLong[i];
+  //   elemConfigWeatherLang.appendChild(option);
+  // }
   if (config.news.country) {
     elemConfigNewsCountry.value = config.news.country;
   }
@@ -312,9 +312,9 @@ function drawConfig() {
     const elemConfigWeatherUnit = document.querySelector("input[name=units][value=" + config.weather.units + "]");
     elemConfigWeatherUnit.checked = true;
   }
-  if (config.weather.lang) {
-    elemConfigWeatherLang.value = config.weather.lang;
-  }
+  // if (config.weather.lang) {
+  //   elemConfigWeatherLang.value = config.weather.lang;
+  // }
 }
 
 async function getConfig() {
@@ -325,9 +325,9 @@ async function getConfig() {
   const category = elemConfigNewsCategory.value;
   const sourceId = elemConfigNewsSorce.selectedIndex;
   const source = elemConfigNewsSorce.value;
-  const langId = elemConfigWeatherLang.selectedIndex;
-  const langShort = elemConfigWeatherLang.value;
-  const langLong = elemConfigWeatherLang.options[langId].innerHTML;
+  // const langId = elemConfigWeatherLang.selectedIndex;
+  // const langShort = elemConfigWeatherLang.value;
+  // const langLong = elemConfigWeatherLang.options[langId].innerHTML;
 
   const elemConfigWeatherUnit = document.querySelector("input[name=units]:checked");
   const unit = elemConfigWeatherUnit.value;
@@ -342,7 +342,8 @@ async function getConfig() {
     config.news.sources = source;
   }
   config.weather.units = unit;
-  config.weather.lang = langShort;
+  // config.weather.lang = langShort;
+  config.weather.lang = 'en';
 
   await window.electronAPI.fileWrite(filename, JSON.stringify(config));
 }
